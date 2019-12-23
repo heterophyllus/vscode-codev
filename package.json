@@ -1,0 +1,29 @@
+{
+    "name": "vscode-codev",
+    "displayName": "CodeV Macro-plus language support",
+    "description": "CodeV Macro-plus language support for Visual Studio Code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "CodeV",
+        "Code-V"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "codev",
+            "aliases": ["CodeV", "codev"],
+            "extensions": ["seq"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "codev",
+            "scopeName": "source.codev",
+            "path": "./syntaxes/codev.tmLanguage.json"
+        }]
+    }
+}
