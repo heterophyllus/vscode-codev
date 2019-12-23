@@ -17,7 +17,7 @@
         "languages": [{
             "id": "codev",
             "aliases": ["CodeV", "codev"],
-            "extensions": ["seq"],
+            "extensions": ["seq","SEQ","INT"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{

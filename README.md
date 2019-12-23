@@ -2,7 +2,6 @@
 
 This extension adds syntax highlighting for CodeV Macro-plus (http://optics.synopsys.com/codev/)
 
-## Features
 
 ## Changelog
 Read the CHANGLELOG to know what has changed over the last few versions of this extension.
