@@ -13,11 +13,16 @@
         "CodeV",
         "CODE V"
     ],
+    "repository": {
+        "type": "git",
+        "url":"https://github.com/heterophyllus/vscode-codev.git"
+    },
+    "icon":"images/icon.jpg",
     "contributes": {
         "languages": [{
             "id": "codev",
             "aliases": ["CodeV", "CODEV", "codev"],
-            "extensions": ["seq","SEQ","int","INT"],
+            "extensions": ["seq","SEQ"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
