@@ -11,13 +11,13 @@
     ],
     "keywords": [
         "CodeV",
-        "Code-V"
+        "CODE V"
     ],
     "contributes": {
         "languages": [{
             "id": "codev",
-            "aliases": ["CodeV", "codev"],
-            "extensions": ["seq","SEQ","INT"],
+            "aliases": ["CodeV", "CODEV", "codev"],
+            "extensions": ["seq","SEQ","int","INT"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{

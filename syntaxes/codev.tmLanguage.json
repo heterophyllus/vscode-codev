@@ -129,7 +129,6 @@
 			]
 		},
 		"qualifiers":{
-			"comment":"a:aberration, b:buffer",
       		"patterns":[
 				{
 					"comment": "qualifier with constant number or special character",
@@ -200,7 +199,7 @@
 							"match":"(^|;|\\(\\s*)([aAbBcCdD])(\\s|;|$)",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other"
+									"name": "keyword.language.other.codev"
 								}
 							}
 						},
@@ -209,7 +208,7 @@
 							"match": "\\s([fF])(\\s*\\)|;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other"
+									"name": "constant.language.other.codev"
 								}
 							}
 						},
@@ -218,7 +217,7 @@
 							"match":"(^|;|\\(\\s*)([lLmMnN])\\b",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other"
+									"name": "keyword.language.other.codev"
 								}
 							}
 						},
@@ -227,7 +226,7 @@
 							"match": "\\s([nN])\\s*(;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other"
+									"name": "constant.language.other.codev"
 								}
 							}
 						},
@@ -236,7 +235,7 @@
 							"match": "\\s([sS])(\\s*\\)|;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other"
+									"name": "constant.language.other.codev"
 								}
 							}
 						},
@@ -245,7 +244,7 @@
 							"match": "\\s([tT])\\s*(;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other"
+									"name": "constant.language.other.codev"
 								}
 							}
 						},
@@ -254,7 +253,7 @@
 							"match": "\\s([wW])(\\s*\\)|;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other"
+									"name": "constant.language.other.codev"
 								}
 							}
 						},
@@ -263,7 +262,7 @@
 							"match":"(^|;|\\(\\s*)([xX])\\b",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other"
+									"name": "keyword.language.other.codev"
 								}
 							}
 						},
@@ -272,7 +271,7 @@
 							"match":"(^|;|\\(\\s*)([yY])\\b",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other"
+									"name": "keyword.language.other.codev"
 								}
 							}
 						},
@@ -281,7 +280,7 @@
 							"match": "\\s([yY])\\s*(;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other"
+									"name": "constant.language.other.codev"
 								}
 							}
 						},
@@ -290,7 +289,7 @@
 							"match":"(^|;|\\(\\s*)([zZ])\\b",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other"
+									"name": "keyword.language.other.codev"
 								}
 							}
 						},
@@ -299,7 +298,7 @@
 							"match": "\\s([zZ])(\\s*\\)|;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other"
+									"name": "constant.language.other.codev"
 								}
 							}
 						}
