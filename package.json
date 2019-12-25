@@ -2,7 +2,7 @@
     "name": "vscode-codev",
     "displayName": "CodeV Macro-plus language support",
     "description": "CodeV Macro-plus language support for Visual Studio Code",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.41.0"
     },
@@ -15,20 +15,31 @@
     ],
     "repository": {
         "type": "git",
-        "url":"https://github.com/heterophyllus/vscode-codev.git"
+        "url": "https://github.com/heterophyllus/vscode-codev.git"
     },
-    "icon":"images/icon.jpg",
+    "icon": "images/icon.jpg",
     "contributes": {
-        "languages": [{
-            "id": "codev",
-            "aliases": ["CodeV", "CODEV", "codev"],
-            "extensions": ["seq","SEQ"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "codev",
-            "scopeName": "source.codev",
-            "path": "./syntaxes/codev.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "codev",
+                "aliases": [
+                    "CodeV",
+                    "CODEV",
+                    "codev"
+                ],
+                "extensions": [
+                    "seq",
+                    "SEQ"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "codev",
+                "scopeName": "source.codev",
+                "path": "./syntaxes/codev.tmLanguage.json"
+            }
+        ]
     }
 }
