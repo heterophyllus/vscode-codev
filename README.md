@@ -3,7 +3,7 @@
 This extension adds syntax highlighting for [CodeV](http://optics.synopsys.com/codev/) Macro-plus scripts.
 
 ## Screenshot
-<img src= "images/syntax.png" width= 75%>
+![syntax](images/syntax.png)
 
 ## Changelog
 Read the CHANGLELOG to know what has changed over the last few versions of this extension.
