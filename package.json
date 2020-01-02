@@ -3,7 +3,7 @@
     "displayName": "CodeV Macro-plus language support",
     "description": "CodeV Macro-plus language support for Visual Studio Code",
     "publisher": "heterophyllus",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "engines": {
         "vscode": "^1.41.0"
     },
