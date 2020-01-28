@@ -8,7 +8,8 @@
         "vscode": "^1.41.0"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Snippets"
     ],
     "keywords": [
         "CodeV",
@@ -40,6 +41,12 @@
                 "language": "codev",
                 "scopeName": "source.codev",
                 "path": "./syntaxes/codev.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "codev",
+                "path": "./snippets/codev.json"
             }
         ]
     }
