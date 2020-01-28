@@ -2,6 +2,9 @@
 
 All notable changes to the "vscode-codev" extension will be documented in this file.
 
+## [0.2.0]
+- Add snippets
+
 ## [0.1.2]
 - Revised README etc.
 
