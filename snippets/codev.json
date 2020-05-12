@@ -54,6 +54,11 @@
         "body":"MODF(${1:expr1},${2:expr2})",
         "description": "Remainder of ${1:expr1} by ${2:expr2}"
     },
+    "RANDF":{
+        "prefix": "RANDF",
+        "body":"RANDF",
+        "description": "Return random value [0..1)"
+    },
     "ROUNDF":{
         "prefix": "ROUNDF",
         "body":"ROUNDF(${1:expr1})",
@@ -163,6 +168,16 @@
         "body":"POLGRID(${1:zoom},${2:wave},${3:field},${4:aper_check},${5:num_rays},${6:input_arr},${7:output_arr})",
         "description":"Trace grid of rays and return the polarization property at the image surface"
     },
+    "PSF_1FLD":{
+        "prefix":"PSF_1FLD",
+        "body":"PSF_1FLD(${1:zoom},${2:field},${3:wave},${4:TGR}, ${5:PGR},${6:NRD},${7:GRI},${8:PRO},${9:XSC},${10:PHA},${11:norm},${12:THR},${13:output_array})",
+        "description":"Compute point spread function"
+    },
+    "PSF_DATA_1FLD":{
+        "prefix":"PSF_DATA_1FLD",
+        "body":"PSF_DATA_1FLD(${1:zoom},${2:field},${3:wave},${4:TGR}, ${5:PGR},${6:NRD},${7:GRI},${8:PRO},${9:XSC},${10:PHA},${11:norm},${12:THR},${13:output_array},${14:data_array})",
+        "description":"Compute point spread function with intensity of each pixel"
+    },
     "RAYPOL":{
         "prefix":"RAYPOL",
         "body":"RAYPOL(${1:zoom},${2:wave},${3:field},${4:aper_check},${5:num_rays},${6:input_arr},${7:output_arr})",
@@ -222,11 +237,6 @@
         "prefix":"SURFSAGD",
         "body":"SURFSAGD(${1:surface},${2:zoom},${3:curvature},${4:x_array_input},${5:y_array_input},${6:output_array})",
         "description":"Compute variance of the sag difference from the input curvature for specified points"
-    },
-    "SVD":{
-        "prefix":"SVD",
-        "body":"SVD(${1:A},${2:rows},${3:cols}.${4:U},${5:V},${6:S})",
-        "description":"Singular value decomposition"
     },
     "TRA_1FLD":{
         "prefix":"TRA_1FLD",
@@ -608,6 +618,11 @@
         "body":"STDEV(${1:array},${2:num_vals})",
         "description":"Compute standard deviation of the array"
     },
+    "SVD":{
+        "prefix":"SVD",
+        "body":"SVD(${1:A},${2:rows},${3:cols}.${4:U},${5:V},${6:S})",
+        "description":"Singular value decomposition"
+    },
     "SUMF":{
         "prefix":"SUMF",
         "body":"SUMF(${1:array},${2:num_vals})",
@@ -620,6 +635,16 @@
         "prefix":"CONCAT",
         "body":"CONCAT(${1:string_expr1},${2:string_expr2})",
         "description":"Concatenate strings"
+    },
+    "FIND_STR_ARR":{
+        "prefix":"FIND_STR_ARR",
+        "body":"FIND_STR_ARR(${1:string},${2:string_array_name})",
+        "description":"Return the first position where the specified string is found"
+    },
+    "JOIN":{
+        "prefix":"JOIN",
+        "body":"JOIN(${1:string_array_name},${2:separator_string},${3:string_array_element},${4:num of strings})",
+        "description":"Concatenates the strings in the array into a single string with the specified delimiter"
     },
     "LENSTR":{
         "prefix":"LENSTR",
@@ -666,11 +691,15 @@
         "body":"UPCASE(${1:string_expr})",
         "description":"Convert to upper cases"
     },
+
+
     "EOFILE":{
         "prefix":"EOFILE",
         "body":"EOFILE",
         "description":"Return true when EOF is detected"
     },
+
+
     "CVERROR":{
         "prefix":"CVERROR",
         "body":"CVERROR(${1:error_msg},${2:cont_line})",
@@ -696,6 +725,8 @@
         "body":"INPARALLEL",
         "description":"Indicates whether the calling Macro-PLUS codeis in a parallel region or in a serial region"
     },
+
+    
     "ISFCT":{
         "prefix":"ISFCT",
         "body":"ISFCT(${1:string_expr})",

@@ -417,7 +417,19 @@
 					}
 				},
 				{
-					"comment": "keywords in one letter",
+					"comment":"Worksheet buffuer",
+					"match":"(^|;|\\(|\\s)((?i)BUF)(\\.)((?i)(B|COL|EMP|FMT|FND|FST|I|J|LEN|LST|MXJ|NUM|ON|STR|TXT|TYP))\\b",
+					"captures":{
+						"2":{
+							"name":"keyword.language.other.codev"
+						},
+						"4":{
+							"name":"keyword.language.other.codev"
+						}
+					}
+				},
+				{
+					"comment": "keywords within one letter",
 					"patterns":[
 						{
 							"comment":"A-D as keyword (aspherical coef)",
