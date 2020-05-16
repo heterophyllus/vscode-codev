@@ -19,7 +19,7 @@
         "type": "git",
         "url": "https://github.com/heterophyllus/vscode-codev.git"
     },
-    "icon": "images/icon.jpg",
+    "icon": "images/icon.png",
     "license": "MIT",
     "contributes": {
         "languages": [
