@@ -1,0 +1,93 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "CodeV-INT",
+    "scopeName": "source.codev-int",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#title"
+        },
+        {
+            "include": "#grid"
+        },
+        {
+            "include": "#zernike"
+        },
+        {
+            "include": "#userdefined"
+        }
+    ],
+    "repository": {
+        "comments":{
+			"patterns":[
+				{
+					"match": "!.*$",
+					"name": "comment.line.codev-int"
+				}
+			]
+        },
+        "title":{
+            "patterns": [
+                {
+                    "match": "^(?!GRD|ZRN|ZFR|UDI|[0-9]|\\-).*$",
+                    "name": "string.other.codev-int"
+                }
+            ]
+        },
+        "grid":{
+            "patterns": [
+                {
+                    "match": "^\\s*((?i)GRD)\\s+\\d+\\s+\\d+\\b",
+                    "name": "keyword.control.codev-int"
+                },
+                {
+                    "match": "\\b((?i)WFR|SUR|FIL|THV|BIR|CAO)\\b",
+                    "name": "keyword.other.codev-int"
+                },
+                {
+                    "match": "\\b((?i)WVL|SSZ|NDA|XSC|NNB)\\s+(\\-)*[0-9.]+\\b",
+                    "name": "support.variable.codev-int"
+                }
+            ]
+        },
+        "zernike":{
+            "patterns": [
+                {
+                    "match": "^\\s*((?i)ZRN|ZFR)\\s+\\d+\\b",
+                    "name": "keyword.control.codev-int"
+                },
+                {
+                    "match": "\\b((?i)WFR|SUR|FIL|THV|BIR|CAO)\\b",
+                    "name": "keyword.other.codev-int"
+                },
+                {
+                    "match": "\\b((?i)WVL|SSZ|XSC|NNB)\\s+(\\-)*[0-9.]+\\b",
+                    "name": "support.variable.codev-int"
+                }
+            ]
+        },
+        "userdefined":{
+            "patterns":[
+                    {
+                        "match": "^\\s*((?i)UDI)\\s+\\d+\\b",
+                        "name": "keyword.control.codev-int"
+                    },
+                    {
+                        "match": "\\b((?i)WFR|SUR|FIL|THV|BIR|CAO)\\b",
+                        "name": "keyword.other.codev-int"
+                    },
+                    {
+                        "match": "\\b((?i)WVL|SSZ|XSC|NNB)\\s+(\\-)*[0-9.]+\\b",
+                        "name": "support.variable.codev-int"
+                    },
+                    {
+                        "match": "\\b((?i)UMR)\\s+\\w+\\b",
+                        "name": "support.variable.codev-int"
+                    }
+
+            ]
+        }
+    }
+}

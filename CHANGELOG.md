@@ -2,6 +2,9 @@
 
 All notable changes to the "vscode-codev" extension will be documented in this file.
 
+## [0.3.0]
+- Add syntax highlighting for .int file
+
 ## [0.2.1]
 - Update snippets and some keywords
 - Simplify display name
