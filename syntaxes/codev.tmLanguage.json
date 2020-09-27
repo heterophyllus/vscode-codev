@@ -107,12 +107,24 @@
 		"controls":{
 			"patterns":[
 				{
-					"match": "(^|;|\\(|\\s)((?i)IF|ELSE|ELS|WHI|FOR|UNT|END|GOT|LBL)\\b",
+					"match": "(^|;|\\(|\\s)((?i)IF|ELSE|ELS|WHI|WHILE|FOR|UNT|END)\\b",
 					"captures":{
 					   "2":{
 						  "name": "keyword.control.codev"
 					   }
 					}
+				 },
+				 {
+					 "match": "(^|;|\\(|\\s)((?i)GOT|GOTO|LBL)\\s+(\\w+)\\b",
+					 "captures": {
+						 "2":{
+							 "name": "keyword.control.codev"
+						 },
+						 "3":{
+							 "name": "string.other.codev"
+						 }
+					 }
+
 				 },
 				 {
 					"match": "(^|;|\\(|\\s)((?i)AND|OR)\\b",
@@ -566,21 +578,25 @@
 				},
 				{
 					"comment": "user defined function",
-					"match":"(^|;|\\(|,|\\s|[\\-\\+\\*\\/\\\\=])(@)([a-zA-Z][a-zA-Z0-9_]*)\\b",
+					"match":"(^|;|\\(|,|\\s|[\\-\\+\\*\\/\\\\=])(@[a-zA-Z][a-zA-Z0-9_]*)\\b",
 					"captures":{
 						"2":{
-							"name": "punctuation.definition.function.other.codev"
+							"name": "entity.name.function.other.codev"
 						}
 					}
 				},
 				{
 					"comment": "declare user defined function",
-					"match": "(^|;|\\(|\\s)((?i)FCT)\\b",
+					"match": "(^|;|\\s)((?i)FCT)\\s+(@[a-zA-Z]+\\w*)\\b",
 					"captures":{
 					   "2":{
-						  "name": "storage.type.codev"
+						  	"name": "keyword.control.function.codev"
+					   },
+					   "3":{
+							"name": "entity.name.function.other.codev"
 					   }
 					}
+					
 				}
 			]	
 		}
