@@ -74,6 +74,7 @@
 					"name": "variable.other.codev"
 				 },
 				 {
+					"comment": "arguments",
 					"match": "[\\#]\\d+\\b",
 					"name": "variable.parameter.codev"
 				 },
@@ -124,14 +125,52 @@
 							 "name": "string.other.codev"
 						 }
 					 }
+				 },
+				 {
+					"comment": "user defined function declaration",
+					"match": "(^|;|\\(|\\s)((?i)FCT)\\b",
+					"captures": {
+						"2":{
+							"name": "storage.type.codev"
+						}
+					}
+				 },
+				 {
+					"match": "(^|;|\\(|\\s)((?i)AND|OR|NOT)\\b",
+					"captures": {
+						"2":{
+							"name": "keyword.control.codev"
+						}
 
+					}
 				 },
 				 {
-					"match": "(^|;|\\(|\\s)((?i)AND|OR)\\b",
-					"name": "keyword.operator.codev"
+					"match": "(^|;|\\(|\\s|\\=)((?i)(TRUE|FALSE))\\b",
+					"captures":{
+					   "2":{
+						  "name": "constant.language.codev"
+					   }
+					}
 				 },
 				 {
-					"match": "(^|;|\\(|\\s)((?i)TRUE|FALSE|YES|NO)\\b",
+					"match": "(^|;|\\(|\\s)((?i)YES|NO)\\b",
+					"captures":{
+					   "2":{
+						  "name": "constant.language.codev"
+					   }
+					}
+				 },
+				 {
+					"match": "(^|;|\\(|\\s)((?i)EOFILE)\\b",
+					"captures":{
+					   "2":{
+						  "name": "constant.language.codev"
+					   }
+					}
+				 },
+				 {
+					"comment": "parallel",
+					"match": "(^|;|\\(|\\s)((?i)THREADNUM|INPARALLEL)\\b",
 					"captures":{
 					   "2":{
 						  "name": "constant.language.codev"
@@ -147,7 +186,7 @@
 					"match": "\\s(?i:[abefgijlqrstuwz](\\d+|[acilos]))\\b",
 					"captures":{
 						"0":{
-							"name": "constant.language.qualifier.codev"
+							"name": "support.type.qualifier.codev"
 						}
 					}
 				},
@@ -156,7 +195,7 @@
 					"match": "\\s((?i)[abefgijlqrstuwz])((\".*\")|('.*'))",
 					"captures":{
 						"1":{
-							"name": "constant.language.qualifier.codev"
+							"name": "support.type.qualifier.codev"
 						},
 						"3":{
 							"name": "string.quoted.double.codev"
@@ -171,7 +210,7 @@
 					"match": "\\s((?i)[abefgijlqrstuwz])(\\^[a-zA-Z][a-zA-Z0-9_]*)\\b",
 					"captures":{
 						"1":{
-							"name": "constant.language.qualifier.codev"
+							"name": "support.type.qualifier.codev"
 						},
 						"2":{
 							"name": "variable.other.codev"
@@ -180,13 +219,16 @@
 				},
 				{
 					"comment": "range qualifier",
-					"match": "(\\.{2})(\\d+|(?i)[acilos])\\b",
+					"match": "(\\.{2})((\\d+)|((?i)[acilos]))\\b",
 					"captures":{
 						"1":{
 							"name": "punctuation.definition.range.qualifier.codev"
 						},
-						"2":{
-							"name": "constant.language.qualifier.codev"
+						"3":{
+							"name": "constant.numeric.codev"
+						},
+						"4":{
+							"name": "support.type.qualifier.codev"
 						}
 					}
 				}
@@ -199,7 +241,7 @@
 					"match": "(^|;|\\(|\\s|\\.{1})((?i)(AAM|AAP|AAS|ABC|ABL|ABR|ABV|AC|ACC|ACM|ACP|ACX|ACY|ADC|ADD|ADJ|ADE|ADM|ADW|ADX|ADY|AEA|AEB|AEG|AEL|AET|AEX|AEY|AEZ|AFC|AFI|AFN|AFO|ACH|AIM|AIR|ALB|ALI|ALL|ALT|AMX|AMY|ANA|ANG|ANN|ANP|AOI|AOR|AP|APC|APD|APE|APL|APT|AR|ARC|ARR|ARS|ARX|ARY|AR_|ASA|ASB|ASC|ASF|ASH|ASO|ASP|AST|ATC|ATE|ATT|AUT|AVE|AWF|AWW|AX|AXE|AXG|AXI|AXY|AZA|AZC|AZE|AZI|AZP))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -208,7 +250,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(BAB|BAC|BAN|BAR|BAS|BAT|BB|BC|BCM|BDC|BDE|BDT|BDX|BDY|BDZ|BEA|BEN|BES|BFC|BFP|BGI|BGP|BIM|BIN|BIO|BIR|BLA|BLC|BLD|BLO|BLS|BLT|BLU|BMA|BMB|BMG|BMN|BMP|BMU|BND|BNS|BOR|BOS|BOU|BP|BPC|BPH|BPR|BR|BRC|BRE|BRF|BRL|BRL|BSB|BSC|BSP|BTH|BTI|BTX|BTY|BUN|BW|BWE|BWL|BWT|BUF))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -217,7 +259,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(CA|CAB|CAD|CAM|CAO|CAP|CAT|CAU|CBD|CC|CCD|CCF|CCM|CCR|CCV|CCX|CCY|CD|CDC|CDE|CDH|CDT|CDV|CED|CEF|CEFF|CEM|CEN|CGS|CIG|CIL|CIN|CIR|CIX|CIY|CLC|CLD|CLE|CLI|CLM|CLR|CLS|CM|CME|CMP|CMX|CMY|CMZ|CNS|CNV|COA|CON|COO|COR|COS|CP|CPA|CPC|CPL|CPU|CR|CRA|CRC|CRO|CRT|CSA|CSC|CSO|CT|CTD|CTH|CUB|CUF|CUM|CUX|CUY|CVO|CVP|CVV|CVX|CWL|CWL|CXP|CXP|CYA|CYD|CYD|CYL|CYN|CHA|CHG|CHI|CHK|CHR|CHT|CAN|CLO|COL|COM|COP|CTL|CHK))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -226,7 +268,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(DAA|DAB|DAC|DAD|DAE|DAF|DAG|DAH|DAJ|DAK|DAP|DAR|DAS|DAT|DB|DBG|DBP|DBU|DC|DCO|DCP|DCS|DD|DDA|DDI|DDM|DDR|DDT|DEC|DEF|DEG|DEL|DEP|DER|DES|DET|DEV|DEX|DEY|DEZ|DFN|DFT|DIA|DIF|DIM|DIN|DIO|DIP|DIR|DIS|DIX|DIY|DKP|DLA|DLB|DLC|DLF|DLG|DLL|DLN|DLR|DLS|DLT|DLV|DLX|DLY|DLZ|DMD|DMS|DN|DNR|DO|DOE|DOL|DOS|DOT|DOV|DP|DPC|DPL|DPO|DR|DRA|DRC|DRN|DRS|DSC|DSI|DSP|DST|DSX|DSY|DSZ|DTB|DTH|DTI|DTL|DTS|DUM|DX|DXF|DY|DZ))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -235,7 +277,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(EAN|EAR|EC|EDC|EDF|EDG|EDI|EDL|EE|EFL|EFP|EFX|EFY|ECH|EJE|ELC|ELE|ELG|ELL|ELX|ELY|EMF|ENC|ENG|ENH|ENP|ENS|ENT|ENV|EP|EPC|EPD|EPL|EPS|ERF|ERI|ERM|ERO|ERR|ESA|ESN|ESP|ET|EVA|EXD|EXM|EXO|EXS|EXT|EMP|EXC|EXI|EXP))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -244,7 +286,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(FAB|FAC|FAN|FAP|FAR|FBA|FBB|FBX|FBY|FBZ|FC|FCO|FDC|FDF|FF|FFC|FFD|FFO|FFP|FFR|FGG|FGW|FID|FIE|FIL|FIO|FIR|FIT|FIX|FLC|FLD|FLO|FLX|FLY|FMA|FNO|FNX|FNY|FOC|FOO|FOV|FPX|FPY|FRE|FRI|FRS|FRW|FRZ|FTT|FUL|FUR|FVR|FYR|FMT|FND|FST|FWD))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -253,7 +295,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(G2D|GAP|GAU|GC|GC1|GC2|GCT|GCV|GD1|GD2|GDE|GDP|GEO|GFT|GG|GGS|GHO|GCH|GIF|GIX|GIY|GL1|GL2|GLA|GLB|GLC|GLD|GLI|GLM|GLM|GLO|GLS|GML|GMQ|GMS|GMT|GO|GOX|GOY|GP1|GP2|GPO|GPR|GPX|GPY|GRA|GRC|GRD|GRE|GRI|GRN|GRO|GRR|GRS|GRT|GRX|GRY|GRZ|GS|GSC|GSL|GSS|GUI|GWL|GWT|GWX|GWY))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -262,7 +304,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(HAL|HAR|HAT|HC|HCC|HCO|HCT|HCX|HCY|HDI|HDN|HEA|HEL|HFA|HFR|HH|HHE|HID|HIG|HIN|HIT|HLN|HMX|HMY|HO2|HOE|HOL|HOM|HOR|HOU|HSW|HTH|HTO|HV1|HV2|HVB|HWL))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -271,7 +313,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(ICO|ICX|ICY|ID|IDL|IDP|IFD|IFO|IFR|IGE|IMA|IMC|IMD|IMG|IMI|IMP|IMS|IMX|IMY|INB|INC|IND|INF|INI|INN|INP|INR|INT|INV|INX|INY|IOR|IRO|IRR|ISF|ITR|IN|INS))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -280,7 +322,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(JC|JI1|JI2|JI3|JI4|JR1|JR2|JR3|JR4|JMX|JNS|JPG|JXM|JXP|JYM|JYP))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -289,7 +331,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(K|KC|KIN|KK|KX|KXC|KY|KYC))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -298,7 +340,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(LAB|LAM|LAT|LAU|LCK|LCO|LEF|LEG|LEV|LIB|LIM|LIN|LLA|LNG|LNS|LOG|LOR|LPM|LRH|LRM|LRS|LRV|LSA|LSC|LSF|LT|LTE|LTI|LTR|LUM|LUN|LY|LYR|LZ|LBL|LEN|LIS|LST|LVR))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -307,7 +349,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(MAE|MAG|MAN|MAP|MAU|MAV|MAX|MBF|MC|MCC|MCO|MCP|MCR|MDA|MEA|MED|MEN|MER|MEX|MFD|MFF|MFL|MFR|MGP|MGS|MCH|MIC|MIL|MIN|MIX|MKS|MLI|MLR|MLT|MM|MNA|MNB|MNC|MNE|MNT|MOD|MOM|MON|MPL|MPP|MPR|MR|MRD|MSC|MSD1|MSD2|MSD3|MSG|MTF|MTO|MTQ|MUL|MWL|MXA|MXC|MXE|MXH|MXT|MY|MZ|MAC|MOV|MXJ))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -316,7 +358,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(NA|NAB|NAO|NAR|NAS|NBR|NCP|NCS|NDA|NEA|NEG|NEL|NEO|NEW|NFO|NFP|NFR|NFX|NFY|NM|NOC|NOL|NOM|NON|NOR|NOS|NR|NRA|NRD|NRF|NRI|NRR|NS1|NS2|NSC|NSL|NSO|NSP|NSS|NTM|NUL|NUM|NWL|NY|NZ|NOT))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -325,7 +367,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(OAL|OAM|OAR|OBH|OBJ|OBS|ODD|ODP|OFS|OGR|ONL|OP|OPA|OPD|OPL|OPR|OPT|ORA|ORD|ORI|ORO|OTH|OVB|OVE|OVH|OVV|OLD|ON|OPE|OUT))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -334,7 +376,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(PA|PAG|PAI|PANG|PAR|PAT|PCS|PCX|PCY|PDD|PDF|PDI|PDL|PDP|PDS|PEA|PEN|PER|PFR|PGR|PHA|PHN|PHO|PHP|PHS|PHT|PCH|PIK|PIK|PIM|PIN|PIS|PIX|PKL|PLA|PLC|PLI|PLO|PLT|PMA|PMX|PMY|PNG|PNT|POC|POL|POP|POR|POS|POW|PPA|PPF|PPH|PPL|PPO|PPR|PPS|PRA|PRC|PRE|PRO|PROP|PRT|PRV|PRX|PRY|PS|PSD|PSE|PSF|PST|PTB|PTC|PTH|PTP|PTZ|PUI|PUR|PUX|PUY|PVC|PVT|PWL|PXI|PYI|PRS|PUT))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -343,7 +385,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(QBF|QCN|QRE|QSG|QSL|QUA))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -352,7 +394,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(RAC|RAD|RAG|RAM|RAN|RAP|RAR|RAS|RAT|RAY|RBS|RC|RCG|RCN|RCO|RCT|RCV|RCX|RCY|RDC|RDCL|RDCM|RDCN|RDM|RDX|RDY|REA|READ|REC|RED|REF|REG|REL|REN|RER|RET|REV|REX|REY|RFC|RFI|RFL|RFN|RFO|RFR|RFS|RGB|RGR|RHF|RIE|RIG|RIH|RIM|RIX|RIY|RL|RLF|RLX|RLY|RMA|RMC|RMD|RMF|RMS|RMX|RNA|RND|RNR|RNX|RNY|ROB|ROC|ROF|ROL|ROO|ROT|ROU|ROW|ROX|ROY|RPA|RPH|RPL|RPS|RPT|RPX|RPY|RR|RRA|RSA|RSC|RSD|RSE|RSF|RSI|RSL|RSP|RSR|RST|RT|RTL|RTO|RTX|RTY|RTZ|RUN|RUS|RUST|RVS|RVT|RVW|RWE|RWL|RWT|RWX|RWY|RXC|RYC|RZC|RES|RFD|RFSTR|RPR|RTN))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -361,7 +403,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(S2C|S2V|SA|SAB|SAG|SAM|SAP|SAS|SAT|SCA|SCC|SCI|SCN|SCO|SCR|SD|SDPX|SDPY|SEC|SEE|SEG|SEL|SEN|SET|SF|SFP|SFX|SFY|SGP|SGR|SHA|SID|SIG|SIM|SIN|SIZ|SKI|SLB|SLC|SLD|SLI|SLL|SLM|SLO|SMO|SN1|SN2|SNA|SNB|SNG|SNS|SOB|SOL|SPA|SPC|SPE|SPG|SPH|SPL|SPO|SPS|SPX|SPY|SQW|SRC|SRL|SRM|SRN|SSI|SSP|SSS|SSX|SSY|STC|STD|STE|STEP|STI|STL|STO|STP|STX|STY|SUB|SUP|SUR|SURN|SURX|SURY|SURZ|SVG|SVI|SVL|SVT|SXO|SXY|SYM|SYO|SAV|SEP|SEQ|SHR|SRT|STR|SVD|SYS))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -370,7 +412,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(TA1|TA2|TAB|TAD|TAN|TAR|TAS|TBE|TCO|TCV|TEL|TEM|TER|TES|TFO|TGM|TGR|THC|THG|THI|THM|THO|THR|THV|TCH|TIF|TIL|TIM|TIN|TIR|TIR|TIT|TITLE|TL|TLI|TNX|TNY|TOD|TOK|TOL|TOR|TOW|TR1|TR2|TRA|TRI|TRN|TRT|TRX|TRY|TSF|TT|TTA|TTO|TVC|TXT|TYP|TYPE))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -379,7 +421,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(U2D|UCC|UCO|UCX|UCY|UDF|UDG|UDS|UGR|UCH|UMC|UMF|UMN|UMO|UMR|UMR|UMX|UMY|UNI|UNL|UNN|UPD|UR|URN|USP|USR))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -388,7 +430,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(V3D|VAR|VAX|VEC|VFD|VIE|VIG|VIR|VIS|VIV|VIX|VIY|VLI|VLX|VLY|VPT|VUX|VUY|VAL|VER))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -397,7 +439,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(WA|WAV|WBF|WBS|WCN|WCUX|WCUY|WDSX|WDSY|WDX|WDY|WED|WEI|WFR|WGF|WHF|WID|WIN|WIR|WL|WLG|WMF|WND|WPO|WPT|WRI|WRITE|WRL|WRX|WRY|WSDX|WSDY|WTA|WTC|WTD|WTF|WTM|WTP|WTS|WTT|WTW|WTX|WTY|WVB|WVL|WVS))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -406,7 +448,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(XAM|XAN|XAP|XAX|XAY|XC|XCN|XDC|XDE|XFO|XIM|XIN|XLA|XLE|XMA|XMI|XOB|XOC|XOD|XOF|XP1|XP2|XPH|XPR|XRI|XSC|XSY|XTO|XX|XY|XYA|XYP|XYZ|XZ|XZF|XML))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -415,7 +457,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(YAM|YAN|YAP|YAX|YC|YCN|YDC|YDE|YEL|YFO|YIM|YIN|YLA|YLE|YMA|YMI|YNI|YOB|YOC|YOD|YOF|YP1|YP2|YPH|YPR|YRI|YSC|YTO|YX|YY|YZ|YES))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -424,7 +466,7 @@
 					"match":"(^|;|\\(|\\s|\\.{1})((?i)(ZAM|ZCA|ZDC|ZDE|ZFE|ZFO|ZFR|ZLA|ZLI|ZOC|ZOD|ZOK|ZOO|ZPH|ZPO|ZPR|ZRN|ZSC))\\b",
 					"captures":{
 						"2":{
-							"name": "keyword.language.other.codev"
+							"name": "keyword.other.codev"
 						}
 					}
 				},
@@ -433,10 +475,10 @@
 					"match":"(^|;|\\(|\\s)((?i)BUF)(\\.)((?i)(B|COL|EMP|FMT|FND|FST|I|J|LEN|LST|MXJ|NUM|ON|STR|TXT|TYP))\\b",
 					"captures":{
 						"2":{
-							"name":"keyword.language.other.codev"
+							"name":"keyword.other.codev"
 						},
 						"4":{
-							"name":"keyword.language.other.codev"
+							"name":"keyword.other.codev"
 						}
 					}
 				},
@@ -448,7 +490,7 @@
 							"match":"(^|;|\\(\\s*)([aAbBcCdD])(\\s|;|$)",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other.codev"
+									"name": "keyword.other.codev"
 								}
 							}
 						},
@@ -457,7 +499,7 @@
 							"match": "\\s([fF])(\\s*\\)|;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other.codev"
+									"name": "support.type.constant.codev"
 								}
 							}
 						},
@@ -466,7 +508,7 @@
 							"match":"(^|;|\\(\\s*)([lLmMnN])\\b",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other.codev"
+									"name": "keyword.other.codev"
 								}
 							}
 						},
@@ -475,7 +517,7 @@
 							"match": "\\s([nN])\\s*(;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other.codev"
+									"name": "constant.language.codev"
 								}
 							}
 						},
@@ -484,7 +526,7 @@
 							"match": "\\s([sS])(\\s*\\)|;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other.codev"
+									"name": "support.type.constant.codev"
 								}
 							}
 						},
@@ -493,7 +535,7 @@
 							"match": "\\s([tT])\\s*(;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other.codev"
+									"name": "constant.language.codev"
 								}
 							}
 						},
@@ -502,7 +544,7 @@
 							"match": "\\s([wW])(\\s*\\)|;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other.codev"
+									"name": "support.type.constant.codev"
 								}
 							}
 						},
@@ -511,7 +553,7 @@
 							"match":"(^|;|\\(\\s*)([xX])\\b",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other.codev"
+									"name": "keyword.other.codev"
 								}
 							}
 						},
@@ -520,7 +562,7 @@
 							"match":"(^|;|\\(\\s*)([yY])\\b",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other.codev"
+									"name": "keyword.other.codev"
 								}
 							}
 						},
@@ -529,7 +571,7 @@
 							"match": "\\s([yY])\\s*(;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other.codev"
+									"name": "constant.language.codev"
 								}
 							}
 						},
@@ -538,7 +580,7 @@
 							"match":"(^|;|\\(\\s*)([zZ])\\b",
 							"captures":{
 								"2":{
-									"name": "keyword.language.other.codev"
+									"name": "keyword.other.codev"
 								}
 							}
 						},
@@ -547,7 +589,7 @@
 							"match": "\\s([zZ])(\\s*\\)|;|$)",
 							"captures":{
 								"1":{
-									"name": "constant.language.other.codev"
+									"name": "support.type.constant.codev"
 								}
 							}
 						}
@@ -560,9 +602,46 @@
 		"functions":{
 			"patterns":[
 				{
-					"match": "(^|;|\\(|,|\\s|[\\-\\+\\*\\/\\\\=])((?i)ARR_TO_BUF|AS_BUILT_ABC|AS_BUILT_VAR|ASINF|ATANF|BUF_TO_ARR|CONCAT|COSF|EXPF|FFT1DCA|FFT1DCB|FFT2DCA|FFT2DCB|FFTdDts|FITERROR|GAUSSBEAM|GAUSSWTS|GET_COMPLEX_MAGNITUDE|GET_IMAGINARY_PART|GET_REAL_PART|GetDim1num|GetDim2num|INDEX|INPARALLEL|INT_DEPART|ISFCT|ISGBL|ISLCL|LENSTR|LOCSTR|LOG10F|LOGF|LOWCASE|MAXF|MINF|MODF|MTF_1FLD|NORMRADIUS|NUM_TO_STR|PAD_REAL_TO_COMPLEX|POLGRID|RANDF|RAYPOL|RAYRSI|RAYSIN|RAYTRA|ReDimNum|RFSTR|RMS_1FLD|RMSSPOT|RMSWE|ROUNDF|SAGF|SASF|SCALE_REAL_ARRAY|SDERIVF|SIGNF|SINF|SPOTDATA|SQRTF|STDEV|STR_TO_NUM|SUBSTR|SUMF|SURFSAGD|SVD|TANF|TRA_1FLD|TRANSFORM|TRUNC|UPCASE|ZERNIKE|ZERNIKEGQ|ZFRCOEF|ZFRFIT|ZRNFIT)\\b",
+					"comment": "mathematics",
+					"match": "(^|;|\\(|,|\\s|[\\-\\+\\*\\/\\\\=])((?i)ABSF|ACOSF|ASINF|ATANF|COSF|EXPF|LOGF|LOG10F|MAXF|MINF|MODF|RANDF|ROUNDF|SIGNF|SINF|SQRTF|TANF|ZFRFIT|ZRNFIT|GAUSSWTS)\\b",
 					"captures":{
-						"2":{
+						"0":{
+							"name": "support.function.language.codev"
+						}
+					}
+				},
+				{
+					"comment": "optics",
+					"match": "(^|;|\\(|,|\\s|[\\-\\+\\*\\/\\\\=])((?i)ABCD|AS_BUILT_ABC|AS_BUILT_VAR|BESTSPH|CVTFIELD|GAUSSBEAM|EVALZERN|FITERROR|INDEX|MTF_1FLD|NORMRADIUS|POLGRID|PSF_1FLD|RAYPOL|RAYRSI|RAYSIN|RAYTRA|RMSSPOT|RMSWE|RMS_1FLD|SAGF|SASF|SDERIVF|SPOTDATA|SURFSAGD|SVD|TRA_1FLD|TRANSFORM|ZERNIKE|ZERNIKEGQ|ZFRCOEF)\\b",
+					"captures":{
+						"0":{
+							"name": "support.function.language.codev"
+						}
+					}
+				},
+				{
+					"comment": "arrays",
+					"match": "(^|;|\\(|,|\\s|[\\-\\+\\*\\/\\\\=])((?i)ARR_TO_BUF|ARRAY_TO_BUFFER|BUF_TO_ARR|BUFFER_TO_ARRAY|FFTdDts|FFT1DCA|FFT1DCB|FFT2DCA|FFT2DCB|GET_COMPLEX_MAGNITUDE|GetDim1Num|GetDim2Num|GET_IMAGENARY_PART|GET_REAL_PART|PAD_REAL_TO_COMPLEX|ReDimNum|SCALE_REAL_ARRAY|STDEV|SUMF)\\b",
+					"captures":{
+						"0":{
+							"name": "support.function.language.codev"
+						}
+					}
+				},
+				{
+					"comment": "strings",
+					"match": "(^|;|\\(|,|\\s|[\\-\\+\\*\\/\\\\=])((?i)CONCAT|FIND_STR_ARR|JOIN|LENSTR|LOCSTR|LOWCASE|NUM_TO_STR|RFSTR|SPLIT|STR_TO_NUM|SUBSTR|TRUNC|UPCASE)\\b",
+					"captures":{
+						"0":{
+							"name": "support.function.language.codev"
+						}
+					}
+				},
+				{
+					"comment": "errors and warnings",
+					"match": "(^|;|\\(|,|\\s|[\\-\\+\\*\\/\\\\=])((?i)CVERROR|CVWARNING|CVPUTREC)\\b",
+					"captures":{
+						"0":{
 							"name": "support.function.language.codev"
 						}
 					}
@@ -581,22 +660,9 @@
 					"match":"(^|;|\\(|,|\\s|[\\-\\+\\*\\/\\\\=])(@[a-zA-Z][a-zA-Z0-9_]*)\\b",
 					"captures":{
 						"2":{
-							"name": "entity.name.function.other.codev"
+							"name": "support.function.user-defined.codev"
 						}
 					}
-				},
-				{
-					"comment": "declare user defined function",
-					"match": "(^|;|\\s)((?i)FCT)\\s+(@[a-zA-Z]+\\w*)\\b",
-					"captures":{
-					   "2":{
-						  	"name": "keyword.control.function.codev"
-					   },
-					   "3":{
-							"name": "entity.name.function.other.codev"
-					   }
-					}
-					
 				}
 			]	
 		}
