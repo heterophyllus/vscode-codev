@@ -1,6 +1,6 @@
 # CodeV Macro-plus language support for Visual Studio Code
 
-This extension adds syntax highlighting and snippets for [Synopsys CODE V](http://optics.synopsys.com/codev/) Macro-plus scripts.
+This extension adds language support for [Synopsys CODE V](http://optics.synopsys.com/codev/) Macro-plus scripts.
 
 ## Screenshot
 ![syntax](images/syntax.png)
