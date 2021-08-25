@@ -210,7 +210,7 @@
 				},
 				{
 					"comment": "qualifier with string label",
-					"match": "\\s((?i)[abefgijlqrstuwz])((\".*\")|('.*'))",
+					"match": "\\s((?i)[abefgijlqrstuwz])((\".*?\")|('.*?'))",
 					"captures":{
 						"1":{
 							"name": "support.type.qualifier.codev"
