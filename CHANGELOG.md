@@ -2,11 +2,14 @@
 
 All notable changes to the "vscode-codev" extension will be documented in this file.
 
+## [0.5.1]
+- Bug fix: coloring qualifier with string label.
 ## [0.5.0]
 - A dot was removed from word separation detections which precede any command keywords.
 - Worksheet buffer operation was updated.
 - Qualifiers with special constant character were divided into several patterns.
 - Some small modifications were applied.
+
 ## [0.4.0]
 - Naming convention for qualifiers were changed.
 - Built-in functions list in syntax setting were updated.
