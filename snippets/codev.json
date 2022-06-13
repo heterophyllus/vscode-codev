@@ -1,57 +1,57 @@
 {
     "ABSF":{
         "prefix": "ABSF",
-        "body": "ABSF(${1:expr})",
+        "body": "ABSF($1)",
         "description": "Absolute Value"
     },
     "ACOSF":{
         "prefix": "ACOSF",
-        "body": "ACOSF(${1:expr})",
+        "body": "ACOSF($1)",
         "description": "Arccosine"
     },
     "ASINF":{
         "prefix": "ASINF",
-        "body": "ASINF(${1:expr})",
+        "body": "ASINF($1)",
         "description": "Arcsine"
     },
     "ATANF":{
         "prefix": "ATANF",
-        "body": "ATANF(${1:expr})",
+        "body": "ATANF($1)",
         "description": "Arctangent"
     },
     "COSF":{
         "prefix":"COSF",
-        "body":"COSF(${1:expr})",
+        "body":"COSF($1)",
         "description": "Cosine"
     },
     "EXPF": {
         "prefix": "EXPF",
-        "body": "EXPF(${1:expr})",
+        "body": "EXPF($1)",
         "description": "Exponential"
     },
     "LOGF":{
         "prefix":"LOGF",
-        "body": "LOGF(${1:expr})",
+        "body": "LOGF($1)",
         "description": "Natural Logarithm"
     },
     "LOG10F":{
         "prefix": "LOG10F",
-        "body": "LOG10F(${1:expr})",
+        "body": "LOG10F($1)",
         "description": "Common Logarithm"
     },
     "MAXF":{
         "prefix": "MAXF",
-        "body": "MAXF(${1:expr1},${2:expr2})",
+        "body": "MAXF(${1:expr1}, ${2:expr2})",
         "desription": "Maximum of exp1 and exp2"
     },
     "MINF":{
         "prefix": "MINF",
-        "body": "MINF(${1:expr1},${2:expr2})",
+        "body": "MINF(${1:expr1}, ${2:expr2})",
         "description": "Minimum of exp1 and exp2"
     },
     "MODF":{
         "prefix":"MODF",
-        "body":"MODF(${1:expr1},${2:expr2})",
+        "body":"MODF(${1:expr1}, ${2:expr2})",
         "description": "Remainder of ${1:expr1} by ${2:expr2}"
     },
     "RANDF":{
@@ -61,7 +61,7 @@
     },
     "ROUNDF":{
         "prefix": "ROUNDF",
-        "body":"ROUNDF(${1:expr1})",
+        "body":"ROUNDF($1)",
         "description": "Round to integer"
     },
     "SIGNF":{
@@ -71,17 +71,17 @@
     },
     "SINF":{
         "prefix":"SINF",
-        "body":"SINF(${1:expr1})",
+        "body":"SINF($1)",
         "description":"Sine"
     },
     "SQRTF":{
         "prefix":"SQRTF",
-        "body":"SQRTF(${1:expr1})",
+        "body":"SQRTF($1)",
         "description":"Square root"
     },
     "TANF":{
         "prefix":"TANF",
-        "body":"TANF(${1:expr1})",
+        "body":"TANF($1)",
         "description":"Tangent"
     },
     "ZFRFIT":{
@@ -648,7 +648,7 @@
     },
     "LENSTR":{
         "prefix":"LENSTR",
-        "body":"LENSTR(${1:string_expr})",
+        "body":"LENSTR($1)",
         "description":"Get length of the string"
     },
     "LOCSTR":{
@@ -658,22 +658,22 @@
     },
     "LOWCASE":{
         "prefix":"LOWCASE",
-        "body":"LOWCASE(${1:string_expr})",
+        "body":"LOWCASE($1)",
         "description":"Convert to lower cases"
     },
     "NUM_TO_STR":{
         "prefix":"NUM_TO_STR",
-        "body":"NUM_TO_STR(${1:expr})",
+        "body":"NUM_TO_STR($1)",
         "description":"Convert number to a string"
     },
     "RFSTR":{
         "prefix":"RFSTR",
-        "body":"RFSTR(${1:expr})",
+        "body":"RFSTR($1)",
         "description":"Convert a replacement field entry to a string"
     },
     "STR_TO_NUM":{
         "prefix":"STR_TO_NUM",
-        "body":"STR_TO_NUM(${1:string_expr})",
+        "body":"STR_TO_NUM($1)",
         "description":"Convert string to a number"
     },
     "SUBSTR":{
@@ -683,12 +683,12 @@
     },
     "TRUNC":{
         "prefix":"TRUNC",
-        "body":"TRUNC(${1:string_expr})",
+        "body":"TRUNC($1)",
         "description":"Truncate blanks"
     },
     "UPCASE":{
         "prefix":"UPCASE",
-        "body":"UPCASE(${1:string_expr})",
+        "body":"UPCASE($1)",
         "description":"Convert to upper cases"
     },
 
@@ -712,7 +712,7 @@
     },
     "CVPUTREC":{
         "prefix":"CVPUTREC",
-        "body":"CVPUTREC(${1:string_expr})",
+        "body":"CVPUTREC($1)",
         "description":"Output information message within 256 characters"
     },
     "THREADNUM":{
@@ -729,17 +729,17 @@
     
     "ISFCT":{
         "prefix":"ISFCT",
-        "body":"ISFCT(${1:string_expr})",
+        "body":"ISFCT($1)",
         "description":"Return true if specified UDF exists"
     },
     "ISLCL":{
         "prefix":"ISLCL",
-        "body":"ISLCL(${1:string_expr})",
+        "body":"ISLCL($1)",
         "description":"Return true if specified local variable exists"
     },
     "ISGBL":{
         "prefix":"ISGBL",
-        "body":"ISGBL(${1:string_expr})",
+        "body":"ISGBL($1)",
         "description":"Return true if specified global variable exists"
     }
 }

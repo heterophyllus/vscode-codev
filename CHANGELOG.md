@@ -2,8 +2,13 @@
 
 All notable changes to the "vscode-codev" extension will be documented in this file.
 
+## [0.5.2]
+- Some of the snippets were simplified.
+- The file "sample.seq" was removed. 
+
 ## [0.5.1]
 - Bug fix: coloring qualifier with string label.
+
 ## [0.5.0]
 - A dot was removed from word separation detections which precede any command keywords.
 - Worksheet buffer operation was updated.
@@ -14,6 +19,7 @@ All notable changes to the "vscode-codev" extension will be documented in this f
 - Naming convention for qualifiers were changed.
 - Built-in functions list in syntax setting were updated.
 - Screenshot picture was changed.
+
 ## [0.3.0]
 - Syntax highlighting for .int file was added.
 
