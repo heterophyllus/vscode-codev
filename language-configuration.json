@@ -18,5 +18,10 @@
         ["(", ")"],
         ["\"", "\""],
         ["'", "'"]
-    ]
+    ],
+
+    "indentationRules": {
+        "increaseIndentPattern": "^\\s*\\b(fct|if|els|els if|for|whi|unt)\\b",
+        "decreaseIndentPattern": "^\\s*\\b(end\\w*|els|els if)\\b"
+    }
 }

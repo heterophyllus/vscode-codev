@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-codev" extension will be documented in this file.
 
+## [0.5.3]
+- Add snippets for control blocks
+- Add indentation rules
+
 ## [0.5.2]
 - Some of the snippets were simplified.
 - The file "sample.seq" was removed. 

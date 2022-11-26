@@ -1,4 +1,56 @@
 {
+    "for":{
+        "prefix": "for",
+        "body":[
+            "for ${1:var} ${2:expr1} ${3:expr2}",
+            "\t$0",
+            "end for"
+        ],
+        "description": "for loop"
+    },
+
+    "whi":{
+        "prefix":"whi",
+        "body": [
+            "whi ${1:expr}",
+            "\t$0",
+            "end whi"
+        ],
+        "description":"while loop"
+    },
+
+    "unt":{
+        "prefix":"unt",
+        "body":[
+            "unt",
+            "\t$0",
+            "end unt ${1:expr}"
+        ],
+        "description":"until loop"
+    },
+
+    "if":{
+        "prefix":"if",
+        "body":[
+            "if ${1:expr}",
+            "\t$0",
+            "end if"
+        ],
+        "description":"if...end"
+    },
+
+    "if_elseif":{
+        "prefix":"if",
+        "body":[
+            "if ${1:expr}",
+            "\t$0",
+            "els if ${2:expr}",
+            "\t$0",
+            "end if"
+        ],
+        "description":"if...elseif...end"
+    },
+
     "ABSF":{
         "prefix": "ABSF",
         "body": "ABSF($1)",
